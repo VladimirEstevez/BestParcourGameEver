@@ -1,0 +1,422 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9999999403953552,
+        0.2155604213476181,
+        1.0067342519760132
+      ],
+      "min": [
+        -0.9999998807907104,
+        -0.2214122861623764,
+        -0.9934526681900024
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1536,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9268067479133606,
+        0.9161224365234375,
+        0.9270279407501221
+      ],
+      "min": [
+        -0.9268067479133606,
+        -0.9161224365234375,
+        -0.9270279407501221
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9999516606330872,
+        0.9268066883087158,
+        0.4045984447002411,
+        1.0
+      ],
+      "min": [
+        0.3755386769771576,
+        -0.9268065690994263,
+        -0.3803703486919403,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.892534613609314,
+        0.892534613609314
+      ],
+      "min": [
+        0.10746532678604126,
+        0.10746532678604126
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 756,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 3072,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9999999403953552,
+        0.2155604213476181,
+        1.0067342519760132
+      ],
+      "min": [
+        -0.9999998807907104,
+        -0.2214122861623764,
+        -0.9934526681900024
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 4608,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9268067479133606,
+        0.9161224365234375,
+        0.9270279407501221
+      ],
+      "min": [
+        -0.9268067479133606,
+        -0.9161224365234375,
+        -0.9270279407501221
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 2048,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.9999516606330872,
+        0.9268066883087158,
+        0.4045984447002411,
+        1.0
+      ],
+      "min": [
+        0.3755386769771576,
+        -0.9268065690994263,
+        -0.3803703486919403,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1024,
+      "componentType": 5126,
+      "count": 128,
+      "max": [
+        0.892534613609314,
+        0.892534613609314
+      ],
+      "min": [
+        0.10746532678604126,
+        0.10746532678604126
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 3024,
+      "componentType": 5125,
+      "count": 756,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Zainal Abd. Kahar (https://sketchfab.com/zsuperxtreme)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/coin-pack-f3279058c0d9457a9b28004585c2b43d",
+      "title": "Coin Pack"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 6048,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2048,
+      "byteOffset": 6048,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 6144,
+      "byteOffset": 8096,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4096,
+      "byteOffset": 14240,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 18336,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/MaterialStar_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/MaterialStar_normal.jpeg"
+    },
+    {
+      "uri": "textures/Material_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Material_normal.jpeg"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "MaterialStar",
+      "normalTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "roughnessFactor": 0.742922678437882
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Material",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "roughnessFactor": 0.7
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Coin1_MaterialStar_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "CoinStar_Material_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.014040744863450527,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.117671646058035e-18,
+        -0.014040744863450527,
+        0.0,
+        0.0,
+        0.014040744863450527,
+        3.117671646058035e-18,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "d6e085e50c5e47a5906ddea1c6e771ac.fbx"
+    },
+    {
+      "children": [
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        -70.71069539900026,
+        5.551115123125783e-15,
+        70.71066083830506,
+        0.0,
+        70.71066083830158,
+        3.13916478589249e-05,
+        70.71069539899675,
+        0.0,
+        -2.2197241655863564e-05,
+        99.9999999999951,
+        -2.2197252524946975e-05,
+        0.0,
+        112.73163604736328,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Coin1"
+    },
+    {
+      "mesh": 0,
+      "name": "Coin1_MaterialStar_0"
+    },
+    {
+      "children": [
+        6
+      ],
+      "matrix": [
+        70.71067235853864,
+        -5.551115123125783e-15,
+        -70.7106838787704,
+        0.0,
+        -70.7106838787702,
+        7.549789970973109e-06,
+        -70.71067235853845,
+        0.0,
+        5.338508118901686e-06,
+        99.99999999999972,
+        5.3385072473766115e-06,
+        0.0,
+        -111.5187759399414,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "CoinStar"
+    },
+    {
+      "mesh": 1,
+      "name": "CoinStar_Material_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}

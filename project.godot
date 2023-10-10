@@ -15,6 +15,10 @@ run/main_scene="res://robot_from_the_godot_engine/scene.gltf"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://Objects/Scripts/Globals.gd"
+
 [input]
 
 left={
