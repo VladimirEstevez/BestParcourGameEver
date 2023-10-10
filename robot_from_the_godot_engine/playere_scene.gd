@@ -1,8 +1,11 @@
 extends CharacterBody3D
-const SPEED = 5.0
+const SPEED = 10
 const JUMP_VELOCITY = 10
 var twist_input:=0.0;
 var pitch_input:=0.0;
+var jump_max = 2;
+var jump_count = 0;
+
 @export var mouse_sensetivity:=0.001
 @export var pitch_min=0
 @export var pitch_max=-60
@@ -36,16 +39,30 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		$AnimationPlayer.play("Jump")
+		if velocity.y < 0:
+			
+			$AnimationPlayer.play("Fall")
+		else: 
+			$AnimationPlayer.play("Jump")
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			# Initial jump from the ground.
+			jump_count = 1
+			print("Jump count",jump_count)
+			velocity.y = JUMP_VELOCITY
+		elif jump_count < jump_max:
+			# Double jump if not on the ground and haven't reached max jumps.
+			jump_count += 1
+			print("Jump count",jump_count)
+			velocity.y = JUMP_VELOCITY
+
 		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (twist_pivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
