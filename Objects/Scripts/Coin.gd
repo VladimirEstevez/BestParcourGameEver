@@ -6,13 +6,15 @@ func _ready():
 	$AnimationPlayer.play("Coin_Idle")
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_area_entered(area):
-	$Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode/Coin1/Coin1_MaterialStar_0.disabled = true
+func _on_body_entered(body):
+	$CollisionShape3D.set_disabled(true)
 	$AnimationPlayer.play("Collect Coin")
-	pass # Replace with function body.
+
+func deleteObject():
+	queue_free()
+
+func add_Coin():
+	Globals.targets_destroyed += 1
+	
+func emit_Particule():
+	$CoinParticule.emitting = true

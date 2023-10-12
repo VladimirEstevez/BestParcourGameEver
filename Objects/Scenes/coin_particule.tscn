@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://w3vuxmrdcvg8"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eqo50"]
+emission_shape = 2
+emission_sphere_radius = 0.01
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tq7wv"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 0.0588235, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_nh2ac"]
+material = SubResource("StandardMaterial3D_tq7wv")
+radius = 0.02
+height = 0.04
+
+[node name="CoinParticule" type="GPUParticles3D"]
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_eqo50")
+draw_pass_1 = SubResource("SphereMesh_nh2ac")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://4lvgxxjwj8ch"]
+[gd_scene load_steps=12 format=3 uid="uid://4lvgxxjwj8ch"]
 
 [ext_resource type="Texture2D" uid="uid://ppxkviqn83yt" path="res://Objects/Models/coin_pack/textures/MaterialStar_baseColor.jpeg" id="1_8fqem"]
 [ext_resource type="Script" path="res://Objects/Scripts/Coin.gd" id="1_igv7i"]
 [ext_resource type="Texture2D" uid="uid://bwndebokntns7" path="res://Objects/Models/coin_pack/textures/MaterialStar_normal.jpeg" id="2_2ky5e"]
+[ext_resource type="PackedScene" uid="uid://w3vuxmrdcvg8" path="res://Objects/Scenes/coin_particule.tscn" id="4_ysbcg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgdm"]
 resource_name = "MaterialStar"
@@ -56,55 +57,132 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("CollisionShape3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3.1),
-"transitions": PackedFloat32Array(-2, -2, 2),
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 3, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bbuja"]
-resource_name = "Collect Coin"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.5),
-"transitions": PackedFloat32Array(-2, -2, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 5, 0), Vector3(0, 3, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 2, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode/Coin1/Coin1_MaterialStar_0:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 12.5664, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.35), Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:scale")
+tracks/2/path = NodePath(".:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bbuja"]
+resource_name = "Collect Coin"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 12.5664, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deleteObject"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"add_Coin"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode/Coin1/Coin1_MaterialStar_0:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 2), Vector3(0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3, 0), Vector3(0, 0, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_Particule"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode/Coin1/Coin1_MaterialStar_0:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(-2, -2, 0.5),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8hy5t"]
@@ -114,10 +192,11 @@ _data = {
 }
 
 [node name="Coin" type="Area3D"]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 0, 0, 0)
 script = ExtResource("1_igv7i")
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
-transform = Transform3D(0.0140407, 0, 0, 0, 3.11767e-18, 0.0140407, 0, -0.0140407, 3.11767e-18, 0, 0, 0)
+transform = Transform3D(0.0140407, 0, 0, 0, -6.13739e-10, 0.0140407, 0, -0.0140407, -6.13739e-10, 0, 0, 0)
 
 [node name="d6e085e50c5e47a5906ddea1c6e771ac_fbx" type="Node3D" parent="Sketchfab_model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -125,16 +204,15 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 [node name="RootNode" type="Node3D" parent="Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx"]
 
 [node name="Coin1" type="Node3D" parent="Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode"]
-transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 1.94717, 0)
 
 [node name="Coin1_MaterialStar_0" type="MeshInstance3D" parent="Sketchfab_model/d6e085e50c5e47a5906ddea1c6e771ac_fbx/RootNode/Coin1"]
-transform = Transform3D(1, 0, 0, 0, 1, 3.55271e-15, 0, -3.55271e-15, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.02696)
 mesh = SubResource("ArrayMesh_hkdhg")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.40407, 0, 0, 0, -6.1374e-08, 1.40407, 0, -1.40407, -6.1374e-08, 0, 0, 0)
-visible = false
+transform = Transform3D(1.4, 0, 0, 0, -6.11959e-08, 1.4, 0, -1.4, -6.11959e-08, 0, 1.52143, 0)
 shape = SubResource("ConvexPolygonShape3D_oi2sb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -142,4 +220,7 @@ libraries = {
 "": SubResource("AnimationLibrary_8hy5t")
 }
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="CoinParticule" parent="." instance=ExtResource("4_ysbcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

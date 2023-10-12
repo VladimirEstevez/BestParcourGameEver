@@ -3,15 +3,17 @@ const SPEED = 10
 const JUMP_VELOCITY = 10
 var twist_input:=0.0;
 var pitch_input:=0.0;
-var jump_max = 2;
+var jump_max = 3;
 var jump_count = 0;
 
 @export var mouse_sensetivity:=0.001
 @export var pitch_min=0
 @export var pitch_max=-60
 
+var jump_animation_state = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 @onready var twist_pivot=$twist
 @onready var pitch_pivot=$twist/pitch
 func _ready():
@@ -39,26 +41,23 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-		if velocity.y < 0:
-			
+		if velocity.y <= 0:
 			$AnimationPlayer.play("Fall")
-		else: 
-			$AnimationPlayer.play("Jump")
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			# Initial jump from the ground.
 			jump_count = 1
-			print("Jump count",jump_count)
+			jump_animation_state = 1
 			velocity.y = JUMP_VELOCITY
 		elif jump_count < jump_max:
 			# Double jump if not on the ground and haven't reached max jumps.
 			jump_count += 1
-			print("Jump count",jump_count)
+			jump_animation_state += 1
+			if jump_animation_state == 2:
+				$JumpParticle.emitting = true
 			velocity.y = JUMP_VELOCITY
-
-		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -67,18 +66,32 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		print(  atan2(direction.x, direction.z))
 		$Sketchfab_model.rotation.y = atan2(direction.x, direction.z)
 		$CollisionPolygon3D.rotation.y = atan2(direction.x, direction.z)
-		$AnimationPlayer.play("Run")
-		
-		
+		if jump_animation_state == 0:
+			$AnimationPlayer.play("Run")
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+	if direction or velocity.y > 0:
+		if jump_animation_state == 1 and not is_on_floor():
+			$AnimationPlayer.play("Jump")
+		elif jump_animation_state == 2 and not is_on_floor():
+			$AnimationPlayer.play("Jump2")
+		elif jump_animation_state == 3 and not is_on_floor():
+			$AnimationPlayer.play("Fall2")
+
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-		
-		if is_on_floor():
+	if is_on_floor():
+		if velocity.y <= 0:
+			jump_animation_state = 0
+		if velocity.x == 0 and velocity.z == 0:
 			$AnimationPlayer.play("Idle")
 
+		
 	move_and_slide()
+	

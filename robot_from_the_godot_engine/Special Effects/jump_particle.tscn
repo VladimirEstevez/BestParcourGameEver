@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7kx844nlqle2"]
+
+[sub_resource type="Curve" id="Curve_p4yci"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.993507, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_dktst"]
+width = 254
+curve = SubResource("Curve_p4yci")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w32ra"]
+gravity = Vector3(0, 0, 0)
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_dktst")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auwyu"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.388235, 0.388235, 0.388235, 0.662745)
+
+[sub_resource type="TorusMesh" id="TorusMesh_20126"]
+material = SubResource("StandardMaterial3D_auwyu")
+
+[node name="JumpParticle" type="GPUParticles3D"]
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_w32ra")
+draw_pass_1 = SubResource("TorusMesh_20126")
