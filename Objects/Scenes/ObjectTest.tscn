@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bj7bg21w1cg7l"]
 
 [ext_resource type="PackedScene" uid="uid://ba7ppe7564u2q" path="res://Test.tscn" id="1_ag7hp"]
-[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://robot_from_the_godot_engine/player_scene.tscn" id="2_8c0ps"]
+[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://Objects/Scenes/player_scene.tscn" id="2_8c0ps"]
 [ext_resource type="PackedScene" uid="uid://cnic5jisetcg8" path="res://Objects/Scenes/ui.tscn" id="3_mgj7l"]
 [ext_resource type="PackedScene" uid="uid://4lvgxxjwj8ch" path="res://Objects/Scenes/Coin.tscn" id="4_5h76g"]
 
