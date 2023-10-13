@@ -28,10 +28,10 @@ expand = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = -138.0
-offset_right = 473.0
-offset_bottom = -37.0
+offset_left = 15.0
+offset_top = -118.0
+offset_right = 243.0
+offset_bottom = -17.0
 grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
@@ -46,17 +46,10 @@ text = "Play"
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
+[node name="options_button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-alignment = 1
-item_count = 3
-selected = 0
-popup/item_0/text = "MAX Volume"
-popup/item_0/id = 0
-popup/item_1/text = "MED Volume"
-popup/item_1/id = 1
-popup/item_2/text = "MIN Volume"
-popup/item_2/id = 2
+size_flags_vertical = 4
+text = "Options"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -70,5 +63,5 @@ text = "Exit
 
 [connection signal="finished" from="CanvasLayer/AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="item_selected" from="CanvasLayer/VBoxContainer/MarginContainer2/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer2/options_button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer3/exit_button" to="." method="_on_exit_button_pressed"]
