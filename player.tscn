@@ -35,3 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06789, -2)
 
 [node name="rusted_wheel_rim_01_1k" parent="." instance=ExtResource("3_yke5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966349, 1.00364, -0.657524)
+mass = 0.5
+inertia = Vector3(0.1, 0.5, 0.1)
+linear_damp = 0.0
