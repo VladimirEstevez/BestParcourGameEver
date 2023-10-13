@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://n16qncgaivf6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o7o0e"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="TorusMesh" id="TorusMesh_21kuw"]
+
+[sub_resource type="PointMesh" id="PointMesh_td207"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ffti0"]
+points = PackedVector3Array(0.926237, 0.25, 0.926237, -0.956116, -0.25, -0.956116, -0.956116, -0.25, 0.956116, 0.956116, -0.25, -0.956116, -0.926237, 0.25, -0.926237, 0.956116, -0.25, 0.956116, -0.926237, 0.25, 0.926237, 0.926237, 0.25, -0.926237)
+
+[node name="MovingPlatform" type="AnimatableBody3D"]
+
+[node name="Platform" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_o7o0e")
+
+[node name="Rocket" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.287538, 0)
+mesh = SubResource("TorusMesh_21kuw")
+
+[node name="Fire" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.335214, 0)
+draw_pass_1 = SubResource("PointMesh_td207")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ffti0")

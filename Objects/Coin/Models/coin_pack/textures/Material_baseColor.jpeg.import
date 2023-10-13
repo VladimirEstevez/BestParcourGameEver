@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ppxkviqn83yt"
-path.s3tc="res://.godot/imported/MaterialStar_baseColor.jpeg-e3fdbfbb6b67c9f81e7c246146737025.s3tc.ctex"
+uid="uid://b6tadb5fen6vd"
+path.s3tc="res://.godot/imported/Material_baseColor.jpeg-02eda9d2d4efc5ad7945cd28885f2ef5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Objects/Models/coin_pack/textures/MaterialStar_baseColor.jpeg"
-dest_files=["res://.godot/imported/MaterialStar_baseColor.jpeg-e3fdbfbb6b67c9f81e7c246146737025.s3tc.ctex"]
+source_file="res://Objects/Coin/Models/coin_pack/textures/Material_baseColor.jpeg"
+dest_files=["res://.godot/imported/Material_baseColor.jpeg-02eda9d2d4efc5ad7945cd28885f2ef5.s3tc.ctex"]
 
 [params]
 

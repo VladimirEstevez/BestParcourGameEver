@@ -1,19 +1,19 @@
 [gd_scene load_steps=12 format=3 uid="uid://4lvgxxjwj8ch"]
 
-[ext_resource type="Texture2D" uid="uid://ppxkviqn83yt" path="res://Objects/Models/coin_pack/textures/MaterialStar_baseColor.jpeg" id="1_8fqem"]
-[ext_resource type="Script" path="res://Objects/Scripts/Coin.gd" id="1_igv7i"]
-[ext_resource type="Texture2D" uid="uid://bwndebokntns7" path="res://Objects/Models/coin_pack/textures/MaterialStar_normal.jpeg" id="2_2ky5e"]
-[ext_resource type="PackedScene" uid="uid://w3vuxmrdcvg8" path="res://Objects/Scenes/coin_particule.tscn" id="4_ysbcg"]
+[ext_resource type="Script" path="res://Objects/Coin/Scripts/Coin.gd" id="1_glb2x"]
+[ext_resource type="Texture2D" uid="uid://ppxkviqn83yt" path="res://Objects/Coin/Models/coin_pack/textures/MaterialStar_baseColor.jpeg" id="2_oggpf"]
+[ext_resource type="Texture2D" uid="uid://bwndebokntns7" path="res://Objects/Coin/Models/coin_pack/textures/MaterialStar_normal.jpeg" id="3_ielfr"]
+[ext_resource type="PackedScene" uid="uid://w3vuxmrdcvg8" path="res://Objects/Coin/Scenes/coin_particule.tscn" id="4_xwrra"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgdm"]
 resource_name = "MaterialStar"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_8fqem")
+albedo_texture = ExtResource("2_oggpf")
 metallic = 1.0
 roughness = 0.742923
 normal_enabled = true
-normal_texture = ExtResource("2_2ky5e")
+normal_texture = ExtResource("3_ielfr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5awl6"]
 _surfaces = [{
@@ -193,7 +193,7 @@ _data = {
 
 [node name="Coin" type="Area3D"]
 transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 0, 0, 0)
-script = ExtResource("1_igv7i")
+script = ExtResource("1_glb2x")
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(0.0140407, 0, 0, 0, -6.13739e-10, 0.0140407, 0, -0.0140407, -6.13739e-10, 0, 0, 0)
@@ -220,7 +220,7 @@ libraries = {
 "": SubResource("AnimationLibrary_8hy5t")
 }
 
-[node name="CoinParticule" parent="." instance=ExtResource("4_ysbcg")]
+[node name="CoinParticule" parent="." instance=ExtResource("4_xwrra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

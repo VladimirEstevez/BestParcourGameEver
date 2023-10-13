@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://704aol7v6dbv"
-path.s3tc="res://.godot/imported/Coin.png-47b83499042c4583d2042c84a99f6b0b.s3tc.ctex"
+uid="uid://boj6oyct37mlp"
+path.s3tc="res://.godot/imported/Material_normal.jpeg-244c931e8a62ee7e668d4341d5b6359e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Objects/Models/coin_pack/Coin.png"
-dest_files=["res://.godot/imported/Coin.png-47b83499042c4583d2042c84a99f6b0b.s3tc.ctex"]
+source_file="res://Objects/Coin/Models/coin_pack/textures/Material_normal.jpeg"
+dest_files=["res://.godot/imported/Material_normal.jpeg-244c931e8a62ee7e668d4341d5b6359e.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Objects/Models/coin_pack/textures/Material_normal.jpeg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

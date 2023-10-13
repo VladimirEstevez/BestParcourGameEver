@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwndebokntns7"
-path.s3tc="res://.godot/imported/MaterialStar_normal.jpeg-9bb8b5d572d2daf57387e7d34fb8b56f.s3tc.ctex"
+path.s3tc="res://.godot/imported/MaterialStar_normal.jpeg-0d36cbd8ebfb8b8a2d9fe90236f79389.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Objects/Models/coin_pack/textures/MaterialStar_normal.jpeg"
-dest_files=["res://.godot/imported/MaterialStar_normal.jpeg-9bb8b5d572d2daf57387e7d34fb8b56f.s3tc.ctex"]
+source_file="res://Objects/Coin/Models/coin_pack/textures/MaterialStar_normal.jpeg"
+dest_files=["res://.godot/imported/MaterialStar_normal.jpeg-0d36cbd8ebfb8b8a2d9fe90236f79389.s3tc.ctex"]
 
 [params]
 
