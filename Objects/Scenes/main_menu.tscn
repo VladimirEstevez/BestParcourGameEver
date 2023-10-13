@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://vst3irbo67is"]
+[gd_scene load_steps=3 format=3 uid="uid://vst3irbo67is"]
 
 [ext_resource type="Script" path="res://Objects/Scenes/main_menu.gd" id="1_eg5db"]
+[ext_resource type="VideoStream" path="res://Untitled-video-Made-with-Clipchamp.ogv" id="2_2qfq0"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -9,37 +10,58 @@ script = ExtResource("1_eg5db")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -114.0
-offset_top = -50.5
-offset_right = 114.0
-offset_bottom = 50.5
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+ratio = 1.7778
 
-[node name="play_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("2_2qfq0")
+autoplay = true
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -118.0
+offset_right = 243.0
+offset_bottom = -17.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="play_button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
-focus_neighbor_top = NodePath("../exit_button")
+focus_neighbor_top = NodePath("../../MarginContainer3/exit_button")
 text = "Play"
 
-[node name="options_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="options_button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 4
 text = "Options"
 
-[node name="exit_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="exit_button" type="Button" parent="CanvasLayer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
 size_flags_vertical = 4
-focus_neighbor_bottom = NodePath("../play_button")
+focus_neighbor_bottom = NodePath("../../MarginContainer/play_button")
 text = "Exit
 "
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="finished" from="CanvasLayer/AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer2/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MarginContainer3/exit_button" to="." method="_on_exit_button_pressed"]

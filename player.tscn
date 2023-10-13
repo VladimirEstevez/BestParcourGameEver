@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbewdgv0skuqa"]
 
 [ext_resource type="PackedScene" uid="uid://ba7ppe7564u2q" path="res://Test.tscn" id="2_e3rq5"]
-[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://Objects/Scenes/player_scene.tscn" id="2_einiq"]
+[ext_resource type="PackedScene" path="res://Objects/Scenes/player_scene.tscn" id="2_einiq"]
 [ext_resource type="PackedScene" uid="uid://vtah8icykb2u" path="res://rusted_wheel_rim_01_1k/rusted_wheel.tscn" id="3_yke5l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrq6u"]
@@ -37,4 +37,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06789, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.966349, 1.00364, -0.657524)
 mass = 0.5
 inertia = Vector3(0.1, 0.5, 0.1)
-linear_damp = 0.0

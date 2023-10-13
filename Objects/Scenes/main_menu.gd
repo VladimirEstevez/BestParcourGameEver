@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CanvasLayer/VBoxContainer/play_button.grab_focus()# Replace with function body.
+	$CanvasLayer/VBoxContainer/MarginContainer/play_button.grab_focus()# Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,3 +22,7 @@ func _on_options_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().quit() # Replace with function body.
+
+
+func _on_video_stream_player_finished():
+	$CanvasLayer/AspectRatioContainer/VideoStreamPlayer.play() # Replace with function body.
