@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://vst3irbo67is"]
+
+[ext_resource type="Script" path="res://Objects/Scenes/main_menu.gd" id="1_eg5db"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eg5db")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -50.5
+offset_right = 114.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../exit_button")
+text = "Play"
+
+[node name="options_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Options"
+
+[node name="exit_button" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../play_button")
+text = "Exit
+"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

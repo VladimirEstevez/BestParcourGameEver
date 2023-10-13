@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Best Parcour Game Ever"
-run/main_scene="res://robot_from_the_godot_engine/scene.gltf"
+run/main_scene="res://Objects/Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
