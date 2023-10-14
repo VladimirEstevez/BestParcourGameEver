@@ -6,7 +6,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s02ec"]
 resource_name = "roof"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_2qd28")
 metallic = 0.35
 roughness = 0.5
@@ -16,7 +15,6 @@ texture_filter = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbqol"]
 resource_name = "metal"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("2_luu7g")
 metallic = 0.35
 roughness = 0.5
