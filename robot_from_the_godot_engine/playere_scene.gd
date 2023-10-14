@@ -1,6 +1,6 @@
 extends CharacterBody3D
 const SPEED = 10
-const JUMP_VELOCITY = 10
+const JUMP_VELOCITY = 8
 var twist_input:=0.0;
 var pitch_input:=0.0;
 var jump_max = 3;
