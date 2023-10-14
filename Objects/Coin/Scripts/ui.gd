@@ -6,6 +6,7 @@ var timer_label
 func _ready():
 	start_time = Engine.get_frames_drawn()  # Record the start time
 	timer_label = $Timer/HBoxContainer/Label
+	$AnimationPlayer.play("StartFlash")
 
 func _process(delta):
 	$MarginContainer/HBoxContainer/Label.text = str(Globals.targets_destroyed)
