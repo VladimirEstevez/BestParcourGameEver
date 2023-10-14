@@ -6,7 +6,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko51p"]
 resource_name = "wall_lines"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_6bgpm")
 metallic = 0.35
 roughness = 0.5
@@ -16,7 +15,6 @@ texture_filter = 1
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhx3x"]
 resource_name = "concrete"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("2_okvim")
 metallic = 0.35
 roughness = 0.5

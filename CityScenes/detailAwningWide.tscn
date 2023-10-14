@@ -5,7 +5,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moayw"]
 resource_name = "roof"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_wu5ba")
 metallic = 0.35
 roughness = 0.5
@@ -42,16 +41,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3ch4t")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7l3vo"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_20lb4"]
 points = PackedVector3Array(-0.5, 0, -0.15, -0.5, 0.280791, -0.15, 0.5, 0, -0.15, -0.5, 0, 0.15, 0.5, 0.280791, -0.15, 0.5, 0, 0.15)
 
 [node name="detailAwning_wide" type="StaticBody3D"]
 
 [node name="detailAwning_wide2" type="MeshInstance3D" parent="."]
-transform = Transform3D(36, 0, 0, 0, 36, 0, 0, 0, 36, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_rarsj")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(36, 0, 0, 0, 36, 0, 0, 0, 36, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_7l3vo")
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_20lb4")
