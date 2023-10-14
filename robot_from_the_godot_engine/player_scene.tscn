@@ -1,14 +1,14 @@
 [gd_scene load_steps=32 format=3 uid="uid://361y4hgr7aai"]
 
-[ext_resource type="Script" path="res://robot_from_the_godot_engine/playere_scene.gd" id="1_aag28"]
-[ext_resource type="Texture2D" uid="uid://dkwu83vpqw1wu" path="res://robot_from_the_godot_engine/textures/Material_baseColor.png" id="2_hx6t8"]
-[ext_resource type="PackedScene" uid="uid://b7kx844nlqle2" path="res://robot_from_the_godot_engine/Special Effects/jump_particle.tscn" id="3_ihf0t"]
+[ext_resource type="Script" path="res://robot_from_the_godot_engine/playere_scene.gd" id="1_u3kyr"]
+[ext_resource type="Texture2D" uid="uid://dkwu83vpqw1wu" path="res://robot_from_the_godot_engine/textures/Material_baseColor.png" id="2_iuhyx"]
+[ext_resource type="PackedScene" uid="uid://b7kx844nlqle2" path="res://robot_from_the_godot_engine/Special Effects/jump_particle.tscn" id="3_ohrah"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clsuv"]
 resource_name = "Material"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_hx6t8")
+albedo_texture = ExtResource("2_iuhyx")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d3513"]
@@ -4292,7 +4292,7 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 top_level = true
 collision_mask = 2
-script = ExtResource("1_aag28")
+script = ExtResource("1_u3kyr")
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1.68461, 0, 0, 0, 3.74058e-16, 1.68461, 0, -1.68461, 3.74058e-16, 0, 0, 0)
@@ -4538,5 +4538,5 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
 [node name="Camera3D" type="Camera3D" parent="twist/pitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="JumpParticle" parent="." instance=ExtResource("3_ihf0t")]
+[node name="JumpParticle" parent="." instance=ExtResource("3_ohrah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227138, -0.0301784, -0.00584078)

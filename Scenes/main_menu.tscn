@@ -21,6 +21,7 @@ ratio = 1.7778
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/AspectRatioContainer"]
 layout_mode = 2
 stream = ExtResource("2_2qfq0")
+volume_db = -80.0
 autoplay = true
 expand = true
 

@@ -1,0 +1,891 @@
+[gd_scene load_steps=34 format=3 uid="uid://c8jchj05t1ao5"]
+
+[ext_resource type="PackedScene" uid="uid://dvj02bba337vw" path="res://CityScenes/roadAsphaltCenter.tscn" id="1_djecd"]
+[ext_resource type="Texture2D" uid="uid://yok6krw1igx6" path="res://sunset_jhbcentral_4k.exr" id="1_tbemk"]
+[ext_resource type="PackedScene" uid="uid://cfeoxciy3wvh5" path="res://CityScenes/roadAsphaltPavement.tscn" id="2_yf4v7"]
+[ext_resource type="PackedScene" uid="uid://qat35y1sty40" path="res://CityScenes/wallA.tscn" id="3_lqljj"]
+[ext_resource type="Texture2D" uid="uid://3y7sjurcig8h" path="res://Objects/Models/City assets/Models/GLTF format/grass_grass.png" id="4_sj1wq"]
+[ext_resource type="PackedScene" uid="uid://c1n4oxuyvfds" path="res://CityScenes/wallAWindow.tscn" id="5_mp32x"]
+[ext_resource type="PackedScene" uid="uid://bavl8egipdftg" path="res://CityScenes/wallADoor.tscn" id="6_i8pnp"]
+[ext_resource type="PackedScene" uid="uid://ba4fr5l6t2gb" path="res://CityScenes/wallAGarage.tscn" id="7_nxne2"]
+[ext_resource type="PackedScene" uid="uid://136l3deond1q" path="res://CityScenes/wallAOpen.tscn" id="8_ca4r7"]
+[ext_resource type="PackedScene" uid="uid://og3xsy8kyc6r" path="res://CityScenes/wallAPainted.tscn" id="9_muug8"]
+[ext_resource type="PackedScene" uid="uid://nss4o44nmuea" path="res://CityScenes/wallARoof.tscn" id="10_utiw0"]
+[ext_resource type="PackedScene" uid="uid://54wq57plu5gg" path="res://CityScenes/wallARoofSlantDetailed.tscn" id="11_3pn3f"]
+[ext_resource type="PackedScene" uid="uid://cpdwcret1m5mw" path="res://CityScenes/balconyLadderTop.tscn" id="12_6alhk"]
+[ext_resource type="PackedScene" uid="uid://xsnmro54bvdi" path="res://CityScenes/detailAwningWide.tscn" id="13_7338q"]
+[ext_resource type="PackedScene" uid="uid://dh8pdenftnnwu" path="res://CityScenes/balconyLadderBottom.tscn" id="14_1uj6a"]
+[ext_resource type="PackedScene" uid="uid://c5sxrw8nnf6gh" path="res://CityScenes/detailDumpsterClosed.tscn" id="15_ndkkf"]
+[ext_resource type="PackedScene" uid="uid://b4ypr7ktym2oj" path="res://CityScenes/detailLightDouble.tscn" id="16_4436r"]
+[ext_resource type="PackedScene" uid="uid://cel1c0y7uoslr" path="res://CityScenes/truckFlat.tscn" id="17_pbrmx"]
+[ext_resource type="PackedScene" uid="uid://bx0ikr03tdbbf" path="res://CityScenes/wallFence.tscn" id="18_3c1ee"]
+[ext_resource type="PackedScene" uid="uid://s66o4pjoa11y" path="res://CityScenes/detailBarrierTypeB.tscn" id="19_3ta7p"]
+[ext_resource type="PackedScene" uid="uid://n2jptxmemchb" path="res://CityScenes/treePineLarge.tscn" id="20_rrjxx"]
+[ext_resource type="PackedScene" uid="uid://b64ror5250a0g" path="res://CityScenes/scaffoldingStructure.tscn" id="21_tu1vh"]
+[ext_resource type="PackedScene" uid="uid://4lvgxxjwj8ch" path="res://Objects/Coin/Scenes/Coin.tscn" id="22_d0i3w"]
+[ext_resource type="PackedScene" uid="uid://n16qncgaivf6" path="res://Objects/Plateform/Scene/moving_platform.tscn" id="23_t22an"]
+[ext_resource type="PackedScene" uid="uid://vtah8icykb2u" path="res://Objects/rusted_wheel_rim_01_1k/rusted_wheel.tscn" id="24_shh4a"]
+[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://Scenes/player_scene.tscn" id="25_214kq"]
+[ext_resource type="PackedScene" uid="uid://dtu1b6rhld7w" path="res://Objects/ui.tscn" id="26_dawi7"]
+[ext_resource type="AudioStream" uid="uid://bsyo3f538vj4e" path="res://club-anthem-171194.mp3" id="27_lqbht"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b8rr0"]
+panorama = ExtResource("1_tbemk")
+
+[sub_resource type="Sky" id="Sky_etcgj"]
+sky_material = SubResource("PanoramaSkyMaterial_b8rr0")
+
+[sub_resource type="Environment" id="Environment_caf10"]
+background_mode = 2
+sky = SubResource("Sky_etcgj")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ejk4"]
+albedo_texture = ExtResource("4_sj1wq")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.965936
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypusn"]
+size = Vector3(70, 70, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_caf10")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Road" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="roadAsphalt_center" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_center2" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_center3" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_center4" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_center5" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_center6" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_center7" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_center8" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_center9" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_center10" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_center11" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_center12" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_center13" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_center14" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_center15" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_center16" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement2" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement3" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement4" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement5" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement6" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement7" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement8" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement9" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement10" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement11" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement12" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement13" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement14" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement15" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement16" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_center17" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_center18" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_center19" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_center20" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_center21" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_center22" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_center23" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_center24" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_center25" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_center26" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_center27" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_center28" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_center29" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_center30" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_center31" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_center32" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_center33" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_center34" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_center35" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_center36" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement17" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement18" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_center37" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_center38" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement19" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement20" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_center39" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 27)
+collision_layer = 2
+
+[node name="wallA" parent="Map/Road/roadAsphalt_center39" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5.488, -12)
+
+[node name="roadAsphalt_center40" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_center41" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 21)
+collision_layer = 2
+
+[node name="roadAsphalt_center42" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 15)
+collision_layer = 2
+
+[node name="roadAsphalt_center43" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 9)
+collision_layer = 2
+
+[node name="roadAsphalt_center44" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 3)
+collision_layer = 2
+
+[node name="roadAsphalt_center45" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_center46" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -9)
+collision_layer = 2
+
+[node name="roadAsphalt_center47" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -15)
+collision_layer = 2
+
+[node name="roadAsphalt_center48" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -21)
+collision_layer = 2
+
+[node name="roadAsphalt_center49" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -27)
+collision_layer = 2
+
+[node name="roadAsphalt_center50" parent="Map/Road" instance=ExtResource("1_djecd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 27)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement21" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement22" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0.512, -3)
+collision_layer = 2
+
+[node name="roadAsphalt_pavement23" parent="Map/Road" instance=ExtResource("2_yf4v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0.512, -3)
+collision_layer = 2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+layers = 3
+material_override = SubResource("StandardMaterial3D_6ejk4")
+use_collision = true
+collision_layer = 2
+collision_mask = 3
+size = Vector3(60, 1, 60)
+
+[node name="Building1" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="wallA_window" parent="Map/Building1" instance=ExtResource("5_mp32x")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 6, -15)
+collision_layer = 2
+
+[node name="wallA_door" parent="Map/Building1" instance=ExtResource("6_i8pnp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21, 0, -21)
+collision_layer = 2
+
+[node name="wallA_garage" parent="Map/Building1" instance=ExtResource("7_nxne2")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, -9)
+collision_layer = 2
+
+[node name="wallA" parent="Map/Building1" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -15)
+collision_layer = 2
+
+[node name="wallA_open" parent="Map/Building1" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -21)
+collision_layer = 2
+
+[node name="wallA_open2" parent="Map/Building1" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, -15)
+collision_layer = 2
+
+[node name="wallA_painted" parent="Map/Building1" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, -15)
+collision_layer = 2
+
+[node name="wallA_roof" parent="Map/Building1" instance=ExtResource("10_utiw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 18, -15)
+collision_layer = 2
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building1" instance=ExtResource("11_3pn3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -9)
+collision_layer = 2
+
+[node name="balconyLadder_top" parent="Map/Building1" instance=ExtResource("12_6alhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 14, -11)
+collision_layer = 2
+
+[node name="detailAwning_wide" parent="Map/Building1" instance=ExtResource("13_7338q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 16, -11)
+collision_layer = 2
+
+[node name="balconyLadder_bottom" parent="Map/Building1" instance=ExtResource("14_1uj6a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 12, -15)
+collision_layer = 2
+
+[node name="detailDumpster_closed" parent="Map/Building1" instance=ExtResource("15_ndkkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -15)
+collision_layer = 2
+
+[node name="Lights" type="Node3D" parent="Map"]
+
+[node name="detailLight_double" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -27)
+collision_layer = 2
+
+[node name="detailLight_double2" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -15)
+collision_layer = 2
+
+[node name="detailLight_double3" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -3)
+collision_layer = 2
+
+[node name="detailLight_double4" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 9)
+collision_layer = 2
+
+[node name="detailLight_double5" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 21)
+collision_layer = 2
+
+[node name="detailLight_double6" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -27)
+collision_layer = 2
+
+[node name="detailLight_double7" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -15)
+collision_layer = 2
+
+[node name="detailLight_double8" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3)
+collision_layer = 2
+
+[node name="detailLight_double9" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 9)
+collision_layer = 2
+
+[node name="detailLight_double10" parent="Map/Lights" instance=ExtResource("16_4436r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 21)
+collision_layer = 2
+
+[node name="truck_flat" parent="Map" instance=ExtResource("17_pbrmx")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.73964, 0.512, -16.7227)
+collision_layer = 2
+
+[node name="Fences" type="Node3D" parent="Map"]
+
+[node name="wallFence" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence2" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence3" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence4" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -26.267)
+collision_layer = 2
+
+[node name="wallFence5" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -20.267)
+collision_layer = 2
+
+[node name="wallFence6" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -14.267)
+collision_layer = 2
+
+[node name="wallFence7" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -8.26697)
+collision_layer = 2
+
+[node name="wallFence8" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -2.26697)
+collision_layer = 2
+
+[node name="wallFence9" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.778, 0, -5.26697)
+collision_layer = 2
+
+[node name="wallFence10" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.778, 0, -5.26697)
+collision_layer = 2
+
+[node name="wallFence11" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence12" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence13" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -29.5)
+collision_layer = 2
+
+[node name="wallFence14" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, -26.267)
+collision_layer = 2
+
+[node name="wallFence15" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, -20.267)
+collision_layer = 2
+
+[node name="wallFence16" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, -14.267)
+collision_layer = 2
+
+[node name="wallFence17" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, -8.26697)
+collision_layer = 2
+
+[node name="wallFence18" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, -2.26697)
+collision_layer = 2
+
+[node name="wallFence19" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, 3.73303)
+collision_layer = 2
+
+[node name="wallFence20" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, 9.73303)
+collision_layer = 2
+
+[node name="wallFence21" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, 15.733)
+collision_layer = 2
+
+[node name="wallFence22" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, 21.733)
+collision_layer = 2
+
+[node name="wallFence23" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.7865, 0, 26.733)
+collision_layer = 2
+
+[node name="wallFence24" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, 29.5)
+collision_layer = 2
+
+[node name="wallFence25" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, 29.5)
+collision_layer = 2
+
+[node name="wallFence26" parent="Map/Fences" instance=ExtResource("18_3c1ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 29.5)
+collision_layer = 2
+
+[node name="detailBarrier_typeB" parent="Map/Fences" instance=ExtResource("19_3ta7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.37, 0.512001, -11.5147)
+collision_layer = 2
+
+[node name="detailDumpster_closed" parent="Map/Fences" instance=ExtResource("15_ndkkf")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, -3)
+collision_layer = 2
+
+[node name="detailDumpster_closed2" parent="Map/Fences" instance=ExtResource("15_ndkkf")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 26, 0, -3)
+collision_layer = 2
+
+[node name="Building2" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="wallA_garage" parent="Map/Building2" instance=ExtResource("7_nxne2")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 15)
+collision_layer = 2
+
+[node name="wallA_garage2" parent="Map/Building2" instance=ExtResource("7_nxne2")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 21)
+collision_layer = 2
+
+[node name="wallA_door" parent="Map/Building2" instance=ExtResource("6_i8pnp")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 27)
+collision_layer = 2
+
+[node name="wallA_painted" parent="Map/Building2" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 21)
+collision_layer = 2
+
+[node name="wallA_painted2" parent="Map/Building2" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 27)
+collision_layer = 2
+
+[node name="wallA_painted3" parent="Map/Building2" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 15)
+collision_layer = 2
+
+[node name="wallA_open" parent="Map/Building2" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 27)
+collision_layer = 2
+
+[node name="wallA" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 21)
+collision_layer = 2
+
+[node name="wallA2" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 15)
+collision_layer = 2
+
+[node name="wallA_open2" parent="Map/Building2" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 27)
+collision_layer = 2
+
+[node name="wallA_open3" parent="Map/Building2" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 21)
+collision_layer = 2
+
+[node name="wallA4" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 15)
+collision_layer = 2
+
+[node name="wallA_window" parent="Map/Building2" instance=ExtResource("5_mp32x")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 12, 27)
+collision_layer = 2
+
+[node name="wallA3" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, 21)
+collision_layer = 2
+
+[node name="wallA5" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 27)
+collision_layer = 2
+
+[node name="wallA6" parent="Map/Building2" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 21)
+collision_layer = 2
+
+[node name="balconyLadder_top" parent="Map/Building2" instance=ExtResource("12_6alhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31, 8, 15)
+collision_layer = 2
+
+[node name="wallA_window2" parent="Map/Building2" instance=ExtResource("5_mp32x")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 12, 15)
+collision_layer = 2
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building2" instance=ExtResource("11_3pn3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 15)
+collision_layer = 2
+
+[node name="wallA_roof" parent="Map/Building2" instance=ExtResource("10_utiw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 18, 15)
+collision_layer = 2
+
+[node name="Building3" type="Node3D" parent="Map"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 0, 36)
+
+[node name="wallA_garage2" parent="Map/Building3" instance=ExtResource("7_nxne2")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 21)
+collision_layer = 2
+
+[node name="wallA_painted" parent="Map/Building3" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 21)
+collision_layer = 2
+
+[node name="wallA_painted2" parent="Map/Building3" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 27)
+collision_layer = 2
+
+[node name="wallA_painted3" parent="Map/Building3" instance=ExtResource("9_muug8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 15)
+collision_layer = 2
+
+[node name="wallA" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 21)
+collision_layer = 2
+
+[node name="wallA_open2" parent="Map/Building3" instance=ExtResource("8_ca4r7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 27)
+collision_layer = 2
+
+[node name="wallA4" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 15)
+collision_layer = 2
+
+[node name="wallA3" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, 21)
+collision_layer = 2
+
+[node name="wallA5" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 27)
+collision_layer = 2
+
+[node name="wallA6" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 21)
+collision_layer = 2
+
+[node name="balconyLadder_top" parent="Map/Building3" instance=ExtResource("12_6alhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31, 8, 15)
+collision_layer = 2
+
+[node name="balconyLadder_top2" parent="Map/Building3" instance=ExtResource("12_6alhk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31, 12, 27)
+collision_layer = 2
+
+[node name="wallA7" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 15)
+collision_layer = 2
+
+[node name="wallA8" parent="Map/Building3" instance=ExtResource("3_lqljj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 18, 15)
+collision_layer = 2
+
+[node name="wallA_roof" parent="Map/Building3/wallA8" instance=ExtResource("10_utiw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 6, 1.90735e-06)
+collision_layer = 2
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building3/wallA8" instance=ExtResource("11_3pn3f")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -3.8147e-06, 0, 12)
+collision_layer = 2
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building3" instance=ExtResource("11_3pn3f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21, 18, 21)
+collision_layer = 2
+
+[node name="wallA_roofSlantDetailed2" parent="Map/Building3" instance=ExtResource("11_3pn3f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 18, 21)
+collision_layer = 2
+
+[node name="ForestArea" type="Node3D" parent="Map"]
+
+[node name="treePine_large" parent="Map/ForestArea" instance=ExtResource("20_rrjxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.6986, 0, -24.7334)
+collision_layer = 2
+
+[node name="treePine_large2" parent="Map/ForestArea" instance=ExtResource("20_rrjxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7318, -1.90735e-06, -17.8986)
+collision_layer = 2
+
+[node name="treePine_large3" parent="Map/ForestArea" instance=ExtResource("20_rrjxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5372, 0, -10.4921)
+collision_layer = 2
+
+[node name="scaffolding_structure" parent="Map/ForestArea" instance=ExtResource("21_tu1vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -17)
+collision_layer = 2
+
+[node name="scaffolding_structure2" parent="Map/ForestArea" instance=ExtResource("21_tu1vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 6, -17)
+collision_layer = 2
+
+[node name="scaffolding_structure3" parent="Map/ForestArea" instance=ExtResource("21_tu1vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 12, -17)
+collision_layer = 2
+
+[node name="scaffolding_structure4" parent="Map/ForestArea" instance=ExtResource("21_tu1vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 18, -17)
+collision_layer = 2
+
+[node name="Borders" type="StaticBody3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.5691)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Borders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.3982, 1.72718)
+shape = SubResource("BoxShape3D_ypusn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Map/Borders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.0047, 29.3982, -29.2728)
+shape = SubResource("BoxShape3D_ypusn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Map/Borders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29.3982, -58.2728)
+shape = SubResource("BoxShape3D_ypusn")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Map/Borders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.5962, 29.3982, -29.2728)
+shape = SubResource("BoxShape3D_ypusn")
+
+[node name="Coins" type="Node3D" parent="Map"]
+
+[node name="Coin" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -23.5205, 21.1801, 9.68624)
+
+[node name="Coin2" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -25.882, 24, -17.0878)
+
+[node name="Coin3" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 18.1191, 6, -24.5396)
+
+[node name="Coin4" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 17.9125, 12, -25.0843)
+
+[node name="Coin5" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 18, 21, -19)
+
+[node name="Coin6" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 22, 14, -19)
+
+[node name="Coin7" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 18, 8, -13)
+
+[node name="Coin8" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 2.59345, 6.62221, -19.5268)
+
+[node name="Coin9" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 9, 6, -3)
+
+[node name="Coin10" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 9, 6, -15)
+
+[node name="Coin11" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 9, 6, 9)
+
+[node name="Coin12" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 9, 6, 21)
+
+[node name="Coin13" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 21.9339, 6, 27.0781)
+
+[node name="Coin14" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 25.9776, 9.68475, 15.1607)
+
+[node name="Coin15" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 16, 21, 15)
+
+[node name="Coin16" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, 17, 18, 27)
+
+[node name="Coin17" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -9, 6, 9)
+
+[node name="Coin18" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -22.8704, 6, 8.99635)
+
+[node name="Coin19" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -27.3205, 10.4912, 19.8929)
+
+[node name="Coin20" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -26.7787, 13.8278, 9.17154)
+
+[node name="Coin21" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -25, 10, -10)
+
+[node name="Coin22" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -17.624, 10.2809, -17.5296)
+
+[node name="Coin23" parent="Map/Coins" instance=ExtResource("22_d0i3w")]
+transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -23.9175, 10.3856, -24.6585)
+
+[node name="Platforms" type="Node3D" parent="Map"]
+
+[node name="MovingPlatform" parent="Map/Platforms" instance=ExtResource("23_t22an")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.1041, 21.1643, 2.12543)
+start_position = Vector3(-22.104, 21.164, 2.125)
+end_position = Vector3(-22.104, 26.164, 2.125)
+
+[node name="MovingPlatform2" parent="Map/Platforms" instance=ExtResource("23_t22an")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -22.1041, 23.8632, -6.81992)
+start_position = Vector3(-22.104, 28.863, -4.473)
+end_position = Vector3(-22.104, 23, -4.473)
+
+[node name="Rims" type="Node3D" parent="Map"]
+
+[node name="rusted_wheel_rim_01_1k" parent="Map/Rims" instance=ExtResource("24_shh4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3168, 2.0511, -2.76505)
+collision_layer = 1
+
+[node name="rusted_wheel_rim_01_1k2" parent="Map/Rims" instance=ExtResource("24_shh4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28436, 2.0511, -2.76505)
+collision_layer = 1
+
+[node name="Player_Scene" parent="." instance=ExtResource("25_214kq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9578, 4.50721, -2.1361)
+
+[node name="UI" parent="." instance=ExtResource("26_dawi7")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("27_lqbht")

@@ -69,6 +69,7 @@ expand_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 
 [node name="Timer" type="MarginContainer" parent="."]
@@ -88,6 +89,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Timer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_osbs6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="StartWarning" type="MarginContainer" parent="."]
 anchors_preset = 8
@@ -109,7 +111,8 @@ layout_mode = 2
 layout_mode = 2
 theme = SubResource("Theme_n8koh")
 theme_override_colors/font_color = Color(0.909804, 0.788235, 0.243137, 0)
-text = "Collect all the coins !"
+text = "Collect all the coins,
+before the time runs out!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
