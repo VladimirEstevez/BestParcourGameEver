@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bj7bg21w1cg7l"]
 
 [ext_resource type="PackedScene" uid="uid://ba7ppe7564u2q" path="res://Test.tscn" id="1_2b27b"]
-[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://robot_from_the_godot_engine/player_scene.tscn" id="2_vsoqk"]
 [ext_resource type="PackedScene" uid="uid://m7i77f6m0n2f" path="res://Objects/ui.tscn" id="3_gtdp1"]
 [ext_resource type="PackedScene" uid="uid://4lvgxxjwj8ch" path="res://Objects/Coin/Scenes/Coin.tscn" id="4_pnfdu"]
 [ext_resource type="PackedScene" uid="uid://n16qncgaivf6" path="res://Objects/Plateform/Scene/moving_platform.tscn" id="5_1fqok"]
+[ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://Scenes/player_scene.tscn" id="5_nqj18"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qrq6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,9 +32,6 @@ transform = Transform3D(2.57738, 0, 0, 0, 2.57738, 0, 0, 0, 2.57738, -0.362886, 
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 1, 5, -3)
 shadow_enabled = true
 
-[node name="Player_Scene" parent="." instance=ExtResource("2_vsoqk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15501, -2)
-
 [node name="UI" parent="." instance=ExtResource("3_gtdp1")]
 
 [node name="Coin" parent="." instance=ExtResource("4_pnfdu")]
@@ -49,5 +46,11 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0709213, 1.99492, 10.
 [node name="Coin4" parent="." instance=ExtResource("4_pnfdu")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.99034, 1.88223, 1.96758)
 
+[node name="Player_Scene" parent="." instance=ExtResource("5_nqj18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49063, 2.0744, 3.06621)
+
 [node name="MovingPlatform" parent="." instance=ExtResource("5_1fqok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 8)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 17.3166, 8.55221, 9.00989)
+start_position = Vector3(17.317, 8.552, 9.01)
+end_position = Vector3(40, 8.552, 9.01)
+speed = 1.0

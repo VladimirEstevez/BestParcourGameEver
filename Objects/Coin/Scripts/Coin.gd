@@ -10,6 +10,7 @@ func _on_body_entered(body):
 	$CollisionShape3D.set_disabled(true)
 	$AnimationPlayer.play("Collect Coin")
 
+
 func deleteObject():
 	queue_free()
 
@@ -18,3 +19,4 @@ func add_Coin():
 	
 func emit_Particule():
 	$CoinParticule.emitting = true
+	$AudioStreamPlayer3D.play()

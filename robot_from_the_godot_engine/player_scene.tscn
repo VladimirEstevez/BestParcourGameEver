@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cuamnrspk7rvu"]
+[gd_scene load_steps=32 format=3 uid="uid://361y4hgr7aai"]
 
 [ext_resource type="Script" path="res://robot_from_the_godot_engine/playere_scene.gd" id="1_aag28"]
 [ext_resource type="Texture2D" uid="uid://dkwu83vpqw1wu" path="res://robot_from_the_godot_engine/textures/Material_baseColor.png" id="2_hx6t8"]

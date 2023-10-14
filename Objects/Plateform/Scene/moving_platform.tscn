@@ -1,27 +1,104 @@
-[gd_scene load_steps=5 format=3 uid="uid://n16qncgaivf6"]
+[gd_scene load_steps=21 format=3 uid="uid://n16qncgaivf6"]
+
+[ext_resource type="Script" path="res://Objects/Plateform/Scripts/moving_platform.gd" id="1_mrtdy"]
+[ext_resource type="Texture2D" uid="uid://c0j46osyd2x7y" path="res://Objects/Plateform/Textures/concrete_floor_02_1k/textures/concrete_floor_02_diff_1k.png" id="1_s2tts"]
+[ext_resource type="Texture2D" uid="uid://duwyguxmio68c" path="res://Objects/Plateform/Textures/concrete_floor_02_1k/textures/concrete_floor_02_nor_gl_1k.png" id="2_ldgtt"]
+[ext_resource type="Texture2D" uid="uid://klxqdenufm03" path="res://Objects/Plateform/Textures/concrete_floor_02_1k/textures/concrete_floor_02_rough_1k.png" id="3_e0ggu"]
+[ext_resource type="Texture2D" uid="uid://dic6iwltgtp4e" path="res://Objects/Plateform/Textures/metal_plate_1k/textures/metal_plate_diff_1k.png" id="4_bneit"]
+[ext_resource type="Texture2D" uid="uid://b8mn1fe6qjoht" path="res://Objects/Plateform/Textures/metal_plate_1k/textures/metal_plate_metal_1k.png" id="5_1y8sv"]
+[ext_resource type="Texture2D" uid="uid://bs0cek1wckkf4" path="res://Objects/Plateform/Textures/metal_plate_1k/textures/metal_plate_nor_gl_1k.png" id="6_63kue"]
+[ext_resource type="Texture2D" uid="uid://bbodg5sd6e1us" path="res://Objects/Plateform/Textures/metal_plate_1k/textures/metal_plate_rough_1k.png" id="7_j8ykn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wmxj"]
+albedo_texture = ExtResource("1_s2tts")
+roughness_texture = ExtResource("3_e0ggu")
+normal_enabled = true
+normal_texture = ExtResource("2_ldgtt")
 
 [sub_resource type="BoxMesh" id="BoxMesh_o7o0e"]
-size = Vector3(2, 0.5, 2)
+material = SubResource("StandardMaterial3D_4wmxj")
+size = Vector3(2, 0.4, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilcrd"]
+albedo_texture = ExtResource("4_bneit")
+metallic = 1.0
+metallic_texture = ExtResource("5_1y8sv")
+roughness_texture = ExtResource("7_j8ykn")
+normal_enabled = true
+normal_texture = ExtResource("6_63kue")
 
 [sub_resource type="TorusMesh" id="TorusMesh_21kuw"]
+material = SubResource("StandardMaterial3D_ilcrd")
 
-[sub_resource type="PointMesh" id="PointMesh_td207"]
+[sub_resource type="Gradient" id="Gradient_6heo4"]
+offsets = PackedFloat32Array(0.252033, 0.707317)
+colors = PackedColorArray(0, 0, 0, 1, 0.494118, 0.164706, 0.0588235, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ffti0"]
-points = PackedVector3Array(0.926237, 0.25, 0.926237, -0.956116, -0.25, -0.956116, -0.956116, -0.25, 0.956116, 0.956116, -0.25, -0.956116, -0.926237, 0.25, -0.926237, 0.956116, -0.25, 0.956116, -0.926237, 0.25, 0.926237, 0.926237, 0.25, -0.926237)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l1fue"]
+gradient = SubResource("Gradient_6heo4")
+
+[sub_resource type="Curve" id="Curve_0x6rp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.207792, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_oxanm"]
+curve = SubResource("Curve_0x6rp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ewm7f"]
+direction = Vector3(0, -1, 0)
+spread = 2.02
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 6.0
+angular_velocity_max = 40.0
+linear_accel_min = 1.0
+linear_accel_max = 5.0
+angle_max = 360.0
+scale_curve = SubResource("CurveTexture_oxanm")
+color_initial_ramp = SubResource("GradientTexture1D_l1fue")
+hue_variation_max = 0.19
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twu2u"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.34902, 0.117647, 0.054902, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_mc24p"]
+material = SubResource("StandardMaterial3D_twu2u")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_73hqh"]
+points = PackedVector3Array(1.01587, 0.228528, 1.01587, -0.943495, -0.2, -0.943495, -0.943495, -0.2, 0.943495, -1.01587, 0.228528, -1.01587, 0.943495, -0.2, -0.943495, -1.01587, 0.228528, 1.01587, 1.01587, 0.228528, -1.01587, 0.943495, -0.2, 0.943495)
 
 [node name="MovingPlatform" type="AnimatableBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+collision_layer = 2
+script = ExtResource("1_mrtdy")
 
 [node name="Platform" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_o7o0e")
 
 [node name="Rocket" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.287538, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.165604, 0)
 mesh = SubResource("TorusMesh_21kuw")
 
-[node name="Fire" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.335214, 0)
-draw_pass_1 = SubResource("PointMesh_td207")
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.370888, 0)
+amount = 200
+lifetime = 0.3
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_ewm7f")
+draw_pass_1 = SubResource("QuadMesh_mc24p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_ffti0")
+shape = SubResource("ConvexPolygonShape3D_73hqh")
