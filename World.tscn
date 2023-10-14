@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c8jchj05t1ao5"]
+[gd_scene load_steps=31 format=3 uid="uid://c8jchj05t1ao5"]
 
 [ext_resource type="PackedScene" uid="uid://dvj02bba337vw" path="res://CityScenes/roadAsphaltCenter.tscn" id="1_r86qb"]
 [ext_resource type="PackedScene" uid="uid://cfeoxciy3wvh5" path="res://CityScenes/roadAsphaltPavement.tscn" id="2_lrnrr"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://361y4hgr7aai" path="res://Scenes/player_scene.tscn" id="20_5nf68"]
 [ext_resource type="PackedScene" uid="uid://n2jptxmemchb" path="res://CityScenes/treePineLarge.tscn" id="21_fapac"]
 [ext_resource type="PackedScene" uid="uid://b64ror5250a0g" path="res://CityScenes/scaffoldingStructure.tscn" id="22_8y1vs"]
+[ext_resource type="PackedScene" uid="uid://vtah8icykb2u" path="res://rusted_wheel_rim_01_1k/rusted_wheel.tscn" id="22_ewrg2"]
+[ext_resource type="PackedScene" uid="uid://n16qncgaivf6" path="res://Objects/Plateform/Scene/moving_platform.tscn" id="23_asej3"]
 [ext_resource type="PackedScene" uid="uid://4lvgxxjwj8ch" path="res://Objects/Coin/Scenes/Coin.tscn" id="23_o0xrr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rapp6"]
@@ -857,5 +859,18 @@ transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.1396
 [node name="Coin23" parent="Map/Coins" instance=ExtResource("23_o0xrr")]
 transform = Transform3D(-0.139633, 0, 0.265523, 0, 0.3, 0, -0.265523, 0, -0.139633, -23.9175, 10.3856, -24.6585)
 
+[node name="Rims" type="Node3D" parent="Map"]
+
+[node name="rusted_wheel_rim_01_1k" parent="Map/Rims" instance=ExtResource("22_ewrg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3168, 2.0511, -2.76505)
+collision_layer = 1
+
+[node name="rusted_wheel_rim_01_1k2" parent="Map/Rims" instance=ExtResource("22_ewrg2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.28436, 2.0511, -2.76505)
+collision_layer = 1
+
 [node name="Player_Scene" parent="." instance=ExtResource("20_5nf68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950404, -2)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("23_asej3")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -24.9581, 16.2731, -4.99503)
