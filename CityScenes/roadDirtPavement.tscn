@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://jtwa0yvhglth"]
+
+[ext_resource type="Texture2D" uid="uid://vb04trbc5yr6" path="res://Objects/Models/City assets/Models/GLTF format/roadDirt_pavement_concrete.png" id="1_er8bg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kpmk"]
+resource_name = "concrete"
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1_er8bg")
+metallic = 0.35
+roughness = 0.5
+emission_enabled = true
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mk1km"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1.00001),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"name": "concrete",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_21fda"]
+resource_name = "roadDirt_pavement_Mesh roadDirt_pavement"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1e-05, 1.00001),
+"attribute_data": PackedByteArray(0, 0, 160, 64, 0, 0, 64, 65, 0, 0, 160, 64, 0, 0, 48, 65, 0, 0, 192, 64, 0, 0, 64, 65, 0, 0, 192, 64, 0, 0, 48, 65),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_1kpmk"),
+"name": "concrete",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 191, 255, 127, 255, 255, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mk1km")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_edo44"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5)
+
+[node name="roadDirt_pavement" type="StaticBody3D"]
+
+[node name="roadDirt_pavement2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+mesh = SubResource("ArrayMesh_21fda")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_edo44")

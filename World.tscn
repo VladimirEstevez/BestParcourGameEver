@@ -1,0 +1,422 @@
+[gd_scene load_steps=20 format=3 uid="uid://c8jchj05t1ao5"]
+
+[ext_resource type="PackedScene" uid="uid://dvj02bba337vw" path="res://CityScenes/roadAsphaltCenter.tscn" id="1_r86qb"]
+[ext_resource type="PackedScene" uid="uid://cfeoxciy3wvh5" path="res://CityScenes/roadAsphaltPavement.tscn" id="2_lrnrr"]
+[ext_resource type="Texture2D" uid="uid://3y7sjurcig8h" path="res://Objects/Models/City assets/Models/GLTF format/grass_grass.png" id="3_fxni7"]
+[ext_resource type="PackedScene" uid="uid://c1n4oxuyvfds" path="res://CityScenes/wallAWindow.tscn" id="4_qljjd"]
+[ext_resource type="PackedScene" uid="uid://bavl8egipdftg" path="res://CityScenes/wallADoor.tscn" id="5_ls0es"]
+[ext_resource type="PackedScene" uid="uid://ba4fr5l6t2gb" path="res://CityScenes/wallAGarage.tscn" id="6_80iyn"]
+[ext_resource type="PackedScene" uid="uid://qat35y1sty40" path="res://CityScenes/wallA.tscn" id="7_7k738"]
+[ext_resource type="PackedScene" uid="uid://136l3deond1q" path="res://CityScenes/wallAOpen.tscn" id="8_rlt8g"]
+[ext_resource type="PackedScene" uid="uid://og3xsy8kyc6r" path="res://CityScenes/wallAPainted.tscn" id="9_8rul5"]
+[ext_resource type="PackedScene" uid="uid://nss4o44nmuea" path="res://CityScenes/wallARoof.tscn" id="10_nby80"]
+[ext_resource type="PackedScene" uid="uid://54wq57plu5gg" path="res://CityScenes/wallARoofSlantDetailed.tscn" id="11_hwufg"]
+[ext_resource type="PackedScene" uid="uid://cpdwcret1m5mw" path="res://CityScenes/balconyLadderTop.tscn" id="12_63gy4"]
+[ext_resource type="PackedScene" uid="uid://xsnmro54bvdi" path="res://CityScenes/detailAwningWide.tscn" id="13_437m5"]
+[ext_resource type="PackedScene" uid="uid://dh8pdenftnnwu" path="res://CityScenes/balconyLadderBottom.tscn" id="14_4w81e"]
+[ext_resource type="PackedScene" uid="uid://c5sxrw8nnf6gh" path="res://CityScenes/detailDumpsterClosed.tscn" id="15_xvcts"]
+[ext_resource type="PackedScene" uid="uid://b4ypr7ktym2oj" path="res://CityScenes/detailLightDouble.tscn" id="16_ojydd"]
+[ext_resource type="PackedScene" uid="uid://cel1c0y7uoslr" path="res://CityScenes/truckFlat.tscn" id="17_wi88p"]
+[ext_resource type="PackedScene" uid="uid://bx0ikr03tdbbf" path="res://CityScenes/wallFence.tscn" id="18_o25ij"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ejk4"]
+albedo_texture = ExtResource("3_fxni7")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.965936
+
+[node name="World" type="Node3D"]
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Road" type="Node3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="roadAsphalt_center" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 21)
+
+[node name="roadAsphalt_center2" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 21)
+
+[node name="roadAsphalt_center3" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 15)
+
+[node name="roadAsphalt_center4" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 15)
+
+[node name="roadAsphalt_center5" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 9)
+
+[node name="roadAsphalt_center6" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 9)
+
+[node name="roadAsphalt_center7" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 3)
+
+[node name="roadAsphalt_center8" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 3)
+
+[node name="roadAsphalt_center9" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -3)
+
+[node name="roadAsphalt_center10" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -3)
+
+[node name="roadAsphalt_center11" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -9)
+
+[node name="roadAsphalt_center12" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -9)
+
+[node name="roadAsphalt_center13" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -15)
+
+[node name="roadAsphalt_center14" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -15)
+
+[node name="roadAsphalt_center15" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -21)
+
+[node name="roadAsphalt_center16" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -21)
+
+[node name="roadAsphalt_pavement" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 21)
+
+[node name="roadAsphalt_pavement2" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 15)
+
+[node name="roadAsphalt_pavement3" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 9)
+
+[node name="roadAsphalt_pavement4" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 3)
+
+[node name="roadAsphalt_pavement5" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -3)
+
+[node name="roadAsphalt_pavement6" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -9)
+
+[node name="roadAsphalt_pavement7" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -15)
+
+[node name="roadAsphalt_pavement8" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -21)
+
+[node name="roadAsphalt_pavement9" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 21)
+
+[node name="roadAsphalt_pavement10" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 15)
+
+[node name="roadAsphalt_pavement11" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 9)
+
+[node name="roadAsphalt_pavement12" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 3)
+
+[node name="roadAsphalt_pavement13" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -3)
+
+[node name="roadAsphalt_pavement14" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -9)
+
+[node name="roadAsphalt_pavement15" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -15)
+
+[node name="roadAsphalt_pavement16" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -21)
+
+[node name="roadAsphalt_center17" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 21)
+
+[node name="roadAsphalt_center18" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 21)
+
+[node name="roadAsphalt_center19" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 15)
+
+[node name="roadAsphalt_center20" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 15)
+
+[node name="roadAsphalt_center21" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 9)
+
+[node name="roadAsphalt_center22" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 9)
+
+[node name="roadAsphalt_center23" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 3)
+
+[node name="roadAsphalt_center24" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 3)
+
+[node name="roadAsphalt_center25" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -3)
+
+[node name="roadAsphalt_center26" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -3)
+
+[node name="roadAsphalt_center27" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -9)
+
+[node name="roadAsphalt_center28" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -9)
+
+[node name="roadAsphalt_center29" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -15)
+
+[node name="roadAsphalt_center30" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -15)
+
+[node name="roadAsphalt_center31" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -21)
+
+[node name="roadAsphalt_center32" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -21)
+
+[node name="roadAsphalt_center33" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, -27)
+
+[node name="roadAsphalt_center34" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, -27)
+
+[node name="roadAsphalt_center35" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, -27)
+
+[node name="roadAsphalt_center36" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, -27)
+
+[node name="roadAsphalt_pavement17" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, -27)
+
+[node name="roadAsphalt_pavement18" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, -27)
+
+[node name="roadAsphalt_center37" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.512, 27)
+
+[node name="roadAsphalt_center38" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.512, 27)
+
+[node name="roadAsphalt_pavement19" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.512, 27)
+
+[node name="roadAsphalt_pavement20" parent="Map/Road" instance=ExtResource("2_lrnrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.512, 27)
+
+[node name="roadAsphalt_center39" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.512, 27)
+
+[node name="roadAsphalt_center40" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.512, 27)
+
+[node name="roadAsphalt_center41" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 21)
+
+[node name="roadAsphalt_center42" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 15)
+
+[node name="roadAsphalt_center43" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 9)
+
+[node name="roadAsphalt_center44" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 3)
+
+[node name="roadAsphalt_center45" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -3)
+
+[node name="roadAsphalt_center46" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -9)
+
+[node name="roadAsphalt_center47" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -15)
+
+[node name="roadAsphalt_center48" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -21)
+
+[node name="roadAsphalt_center49" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, -27)
+
+[node name="roadAsphalt_center50" parent="Map/Road" instance=ExtResource("1_r86qb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0.512, 27)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+material_override = SubResource("StandardMaterial3D_6ejk4")
+size = Vector3(60, 1, 60)
+
+[node name="Building1" type="Node3D" parent="Map"]
+
+[node name="wallA_window" parent="Map/Building1" instance=ExtResource("4_qljjd")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 6, -15)
+
+[node name="wallA_door" parent="Map/Building1" instance=ExtResource("5_ls0es")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21, 0, -21)
+
+[node name="wallA_garage" parent="Map/Building1" instance=ExtResource("6_80iyn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, -9)
+
+[node name="wallA" parent="Map/Building1" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -15)
+
+[node name="wallA_open" parent="Map/Building1" instance=ExtResource("8_rlt8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -21)
+
+[node name="wallA_open2" parent="Map/Building1" instance=ExtResource("8_rlt8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, -15)
+
+[node name="wallA_painted" parent="Map/Building1" instance=ExtResource("9_8rul5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, -15)
+
+[node name="wallA_roof" parent="Map/Building1" instance=ExtResource("10_nby80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 18, -15)
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building1" instance=ExtResource("11_hwufg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -9)
+
+[node name="balconyLadder_top" parent="Map/Building1" instance=ExtResource("12_63gy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 14, -11)
+
+[node name="detailAwning_wide" parent="Map/Building1" instance=ExtResource("13_437m5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 16, -11)
+
+[node name="balconyLadder_bottom" parent="Map/Building1" instance=ExtResource("14_4w81e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 12, -15)
+
+[node name="detailDumpster_closed" parent="Map/Building1" instance=ExtResource("15_xvcts")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -15)
+
+[node name="Lights" type="Node3D" parent="Map"]
+
+[node name="detailLight_double" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -27)
+
+[node name="detailLight_double2" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -15)
+
+[node name="detailLight_double3" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -3)
+
+[node name="detailLight_double4" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 9)
+
+[node name="detailLight_double5" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 21)
+
+[node name="detailLight_double6" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -27)
+
+[node name="detailLight_double7" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -15)
+
+[node name="detailLight_double8" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, -3)
+
+[node name="detailLight_double9" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 9)
+
+[node name="detailLight_double10" parent="Map/Lights" instance=ExtResource("16_ojydd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 0, 21)
+
+[node name="truck_flat" parent="Map" instance=ExtResource("17_wi88p")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.73964, 0.512, -16.7227)
+
+[node name="Fences" type="Node3D" parent="Map"]
+
+[node name="wallFence" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -29.5)
+
+[node name="wallFence2" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -29.5)
+
+[node name="wallFence3" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -29.5)
+
+[node name="wallFence4" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -26.267)
+
+[node name="wallFence5" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -20.267)
+
+[node name="wallFence6" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -14.267)
+
+[node name="wallFence7" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -8.26697)
+
+[node name="wallFence8" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.778, 0, -2.26697)
+
+[node name="wallFence9" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.778, 0, 0.733032)
+
+[node name="wallFence10" parent="Map/Fences" instance=ExtResource("18_o25ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.778, 0, 0.733032)
+
+[node name="detailDumpster_closed" parent="Map" instance=ExtResource("15_xvcts")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 3)
+
+[node name="detailDumpster_closed2" parent="Map" instance=ExtResource("15_xvcts")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 26, 0, 3)
+
+[node name="Building2" type="Node3D" parent="Map"]
+
+[node name="wallA_garage" parent="Map/Building2" instance=ExtResource("6_80iyn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 15)
+
+[node name="wallA_garage2" parent="Map/Building2" instance=ExtResource("6_80iyn")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 21)
+
+[node name="wallA_door" parent="Map/Building2" instance=ExtResource("5_ls0es")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 0, 27)
+
+[node name="wallA_painted" parent="Map/Building2" instance=ExtResource("9_8rul5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 21)
+
+[node name="wallA_painted2" parent="Map/Building2" instance=ExtResource("9_8rul5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 27)
+
+[node name="wallA_painted3" parent="Map/Building2" instance=ExtResource("9_8rul5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 15)
+
+[node name="wallA_open" parent="Map/Building2" instance=ExtResource("8_rlt8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 27)
+
+[node name="wallA" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 21)
+
+[node name="wallA2" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, 15)
+
+[node name="wallA_open2" parent="Map/Building2" instance=ExtResource("8_rlt8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 27)
+
+[node name="wallA_open3" parent="Map/Building2" instance=ExtResource("8_rlt8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 21)
+
+[node name="wallA4" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 6, 15)
+
+[node name="wallA_window" parent="Map/Building2" instance=ExtResource("4_qljjd")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 12, 27)
+
+[node name="wallA3" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 12, 21)
+
+[node name="wallA5" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 27)
+
+[node name="wallA6" parent="Map/Building2" instance=ExtResource("7_7k738")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 21)
+
+[node name="balconyLadder_top" parent="Map/Building2" instance=ExtResource("12_63gy4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31, 8, 15)
+
+[node name="wallA_window2" parent="Map/Building2" instance=ExtResource("4_qljjd")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 21, 12, 15)
+
+[node name="wallA_roofSlantDetailed" parent="Map/Building2" instance=ExtResource("11_hwufg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, 15)
+
+[node name="wallA_roof" parent="Map/Building2" instance=ExtResource("10_nby80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 18, 15)
