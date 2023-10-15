@@ -14,11 +14,12 @@ func _process(delta):
 	$MarginContainer/HBoxContainer/Label.text = str(Globals.targets_destroyed)
 	var current_time = Engine.get_frames_drawn()
 	var elapsed_frames = current_time - start_time
-	var remaining_seconds = 360 - elapsed_frames * delta
+	var remaining_seconds = 90 - elapsed_frames * delta
 
 	var formatted_time = format_time(remaining_seconds)
 	if formatted_time == "00:00.000":
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://lose_menu.tscn")
+		
 	timer_label.text = "Time: " + formatted_time
 
 func format_time(seconds):

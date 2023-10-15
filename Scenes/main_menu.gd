@@ -3,7 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_bus_volume_percentage("Master", 90)
 	$CanvasLayer/VBoxContainer/MarginContainer/play_button.grab_focus()# Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,3 +65,8 @@ func _on_option_button_item_selected(index):
 # "Min" selected, set volume to minimum
 			set_volume("min")
  # Replace with function body.
+
+
+func _on_audio_stream_player_3d_finished():
+	$AudioStreamPlayer.play()
+	# Replace with function body.

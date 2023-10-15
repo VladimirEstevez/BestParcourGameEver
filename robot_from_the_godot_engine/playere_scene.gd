@@ -17,6 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 2
 @onready var twist_pivot=$twist
 @onready var pitch_pivot=$twist/pitch
 func _ready():
+	Globals.targets_destroyed = 0
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _unhandled_input(event:InputEvent)->void:
