@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vst3irbo67is"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_eg5db"]
-[ext_resource type="VideoStream" path="res://Untitled-video-Made-with-Clipchamp.ogv" id="2_2qfq0"]
+[ext_resource type="VideoStream" path="res://Objects/backgrounds/Untitled-video-Made-with-Clipchamp.ogv" id="2_gw2uu"]
 [ext_resource type="AudioStream" uid="uid://cij24g55dc5l3" path="res://Objects/music and sounds/background-drum-and-bass-117717.mp3" id="3_8oo4g"]
 
 [node name="main_menu" type="Control"]
@@ -21,7 +21,7 @@ ratio = 1.7778
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/AspectRatioContainer"]
 layout_mode = 2
-stream = ExtResource("2_2qfq0")
+stream = ExtResource("2_gw2uu")
 volume_db = -80.0
 autoplay = true
 expand = true

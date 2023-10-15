@@ -1,14 +1,14 @@
 [gd_scene load_steps=32 format=3 uid="uid://361y4hgr7aai"]
 
-[ext_resource type="Script" path="res://Scenes/player/robot_from_the_godot_engine/playere_scene.gd" id="1_llm6e"]
-[ext_resource type="Texture2D" uid="uid://dkwu83vpqw1wu" path="res://Scenes/player/robot_from_the_godot_engine/textures/Material_baseColor.png" id="2_jwxxk"]
-[ext_resource type="PackedScene" uid="uid://b7kx844nlqle2" path="res://Scenes/player/robot_from_the_godot_engine/Special Effects/jump_particle.tscn" id="3_4f1om"]
+[ext_resource type="Script" path="res://Scenes/player/robot_from_the_godot_engine/playere_scene.gd" id="1_u3kyr"]
+[ext_resource type="Texture2D" uid="uid://dkwu83vpqw1wu" path="res://Scenes/player/robot_from_the_godot_engine/textures/Material_baseColor.png" id="2_iuhyx"]
+[ext_resource type="PackedScene" uid="uid://b7kx844nlqle2" path="res://Scenes/player/robot_from_the_godot_engine/Special Effects/jump_particle.tscn" id="3_ohrah"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clsuv"]
 resource_name = "Material"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_jwxxk")
+albedo_texture = ExtResource("2_iuhyx")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d3513"]
@@ -4291,8 +4291,8 @@ _data = {
 [node name="Player_Scene" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 top_level = true
-collision_mask = 6
-script = ExtResource("1_llm6e")
+collision_mask = 2
+script = ExtResource("1_u3kyr")
 
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1.68461, 0, 0, 0, 3.74058e-16, 1.68461, 0, -1.68461, 3.74058e-16, 0, 0, 0)
@@ -4527,7 +4527,7 @@ libraries = {
 }
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
-polygon = PackedVector2Array(-0.380248, -0.033658, 0.619773, -0.0414906, 0.562572, 0.961554, 0.465557, 1.38601, 0.633075, 1.59608, 0.596542, 1.86066, 0.597723, 2.28449, 0.157939, 2.62897, -0.348536, 2.57673, -0.543355, 1.99774, -0.473723, 1.86439, 0, 2, -0.291963, 1.75155, -0.490804, 1.64416, -0.283043, 1.18448, -0.410169, 0.0468202)
+polygon = PackedVector2Array(-0.380248, -0.033658, 0.619773, -0.0414906, 0.576662, 1.26935, 1.47993, 1.28337, 1.40104, 1.62701, 0.794961, 1.87562, 0.844176, 2.34813, 0.176029, 2.83472, -0.535919, 2.73591, -0.543355, 1.99774, -0.631666, 1.76436, -1.21807, 1.48983, -0.877757, 1.17495, -0.866926, 1.18437, -0.283043, 1.18448, -0.410169, 0.0468202)
 
 [node name="twist" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
@@ -4538,5 +4538,5 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
 [node name="Camera3D" type="Camera3D" parent="twist/pitch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="JumpParticle" parent="." instance=ExtResource("3_4f1om")]
+[node name="JumpParticle" parent="." instance=ExtResource("3_ohrah")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227138, -0.0301784, -0.00584078)

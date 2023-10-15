@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://djie2c3ikbm2h"]
+
+[ext_resource type="Script" path="res://Scenes/win_menu.gd" id="1_gvg6b"]
+[ext_resource type="Texture2D" uid="uid://ch21a7nuto3t8" path="res://Objects/backgrounds/vecteezy_cute-characters-robot-holding-money-bag_3319131/[removal.ai]_336b892b-10e3-439b-a214-42adae5d6811-blue_robot7_generated.png" id="2_jru1y"]
+[ext_resource type="AudioStream" uid="uid://6kam5w8llfxm" path="res://Objects/music and sounds/crowd-cheer-ii-6263.mp3" id="2_t64fq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86wgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ym5tm"]
+
+[node name="WinMenu" type="CanvasLayer"]
+script = ExtResource("1_gvg6b")
+
+[node name="[removal_ai]336b892b-10e3-439b-a214-42Adae5d6811-blueRobot7Generated" type="Sprite2D" parent="."]
+position = Vector2(570, 307)
+texture = ExtResource("2_jru1y")
+
+[node name="Winner" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Winner"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_right = 350.0
+offset_bottom = 239.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Winner/MarginContainer"]
+layout_mode = 2
+
+[node name="Win" type="Label" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.352941, 0.917647, 1)
+theme_override_font_sizes/font_size = 60
+text = "Congratulations, you won!!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 50
+
+[node name="Replay" type="Button" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 43
+theme_override_styles/hover = SubResource("StyleBoxFlat_86wgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ym5tm")
+text = "REPLAY"
+
+[node name="MarginContainer" type="MarginContainer" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 50
+
+[node name="back" type="Button" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 43
+theme_override_styles/hover = SubResource("StyleBoxFlat_86wgr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ym5tm")
+text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t64fq")
+autoplay = true
+
+[connection signal="pressed" from="Winner/MarginContainer/VBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Winner/MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]

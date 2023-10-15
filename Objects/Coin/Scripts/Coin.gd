@@ -17,7 +17,7 @@ func deleteObject():
 func add_Coin():
 	Globals.targets_destroyed += 1
 	if Globals.targets_destroyed == 23:
-		get_tree().change_scene_to_file("res://win_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/win_menu.tscn")
 	
 func emit_Particule():
 	$CoinParticule.emitting = true
