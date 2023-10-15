@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjhxl7bkfihrg"]
+
+[ext_resource type="Script" path="res://Scenes/lose_menu.gd" id="1_nvjrn"]
+[ext_resource type="Texture2D" uid="uid://bd7wnju8qi02p" path="res://Objects/backgrounds/vintage-skull-pattern-black-background/v903-techi-34b.jpg" id="2_q8o24"]
+[ext_resource type="AudioStream" uid="uid://5c5wqwt54gwq" path="res://Objects/music and sounds/wah-wah-sad-trombone-6347.mp3" id="2_tnkcp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5cqva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71as3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h24fv"]
+
+[node name="lose_menu" type="CanvasLayer"]
+script = ExtResource("1_nvjrn")
+
+[node name="V903-techi-34b" type="Sprite2D" parent="."]
+position = Vector2(585, 332.875)
+scale = Vector2(0.24, 0.200495)
+texture = ExtResource("2_q8o24")
+
+[node name="Loser" type="Control" parent="."]
+material = SubResource("ShaderMaterial_5cqva")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 13.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Loser"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_right = 350.0
+offset_bottom = 239.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Loser/MarginContainer"]
+layout_mode = 2
+
+[node name="Lose" type="Label" parent="Loser/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER!!!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Loser/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 50
+
+[node name="Replay" type="Button" parent="Loser/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 43
+theme_override_styles/hover = SubResource("StyleBoxFlat_71as3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h24fv")
+text = "REPLAY"
+
+[node name="MarginContainer" type="MarginContainer" parent="Loser/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_top = 50
+
+[node name="back" type="Button" parent="Loser/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 43
+theme_override_styles/hover = SubResource("StyleBoxFlat_71as3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_h24fv")
+text = "MAIN MENU"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tnkcp")
+autoplay = true
+
+[connection signal="pressed" from="Loser/MarginContainer/VBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Loser/MarginContainer/VBoxContainer/back" to="." method="_on_back_pressed"]
