@@ -47,6 +47,12 @@ theme_override_colors/font_color = Color(1, 0.352941, 0.917647, 1)
 theme_override_font_sizes/font_size = 60
 text = "Congratulations, you won!!"
 
+[node name="LabelFinalTime" type="Label" parent="Winner/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.352941, 0.917647, 1)
+theme_override_font_sizes/font_size = 60
+
 [node name="MarginContainer2" type="MarginContainer" parent="Winner/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4

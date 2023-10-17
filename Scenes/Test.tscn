@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnx7jd5j1iox4"]
+[gd_scene load_steps=4 format=3 uid="uid://f8838n3dpxnw"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_v1tk7"]
 albedo_color = Color(0.313726, 0.0509804, 0.0980392, 0.596078)
