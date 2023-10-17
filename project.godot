@@ -18,6 +18,12 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 
 Globals="*res://Objects/Coin/Scripts/Globals.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
 [filesystem]
 
 import/fbx/enabled=false
